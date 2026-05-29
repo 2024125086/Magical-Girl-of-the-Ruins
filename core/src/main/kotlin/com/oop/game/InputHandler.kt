@@ -21,7 +21,7 @@ import com.badlogic.gdx.Input
  *  object 키워드
  * ────────────────────────────────────────────────────────────
  *  'object' 는 **싱글톤 객체** 를 만드는 키워드다.
- *    - 인스턴스가 단 하나뿐이고
+ *    - 인스턴스가 단 단 하나뿐이고
  *    - 어디서든 InputHandler.XXX 로 바로 접근 가능
  *  입력처럼 "상태는 시스템 하나에만 존재" 하는 자원에 잘 어울린다.
  *  (파이썬이라면 모듈 수준 함수/변수와 비슷한 역할)
@@ -45,8 +45,6 @@ object InputHandler {
     }
 
     // 자주 쓰는 키 상수를 짧은 이름으로 재노출.
-    //   원본은 Input.Keys.LEFT 처럼 길어서 자주 쓸수록 번거롭다.
-    //   필요하면 Input.Keys.XXX 에서 다른 키를 직접 import 해서 써도 된다.
     val LEFT = Input.Keys.LEFT
     val RIGHT = Input.Keys.RIGHT
     val UP = Input.Keys.UP
@@ -57,4 +55,9 @@ object InputHandler {
     val A = Input.Keys.A
     val S = Input.Keys.S
     val D = Input.Keys.D
+    
+    // 숫자 키 추가 (스킬 선택용)
+    val NUM_1 = Input.Keys.NUM_1
+    val NUM_2 = Input.Keys.NUM_2
+    val NUM_3 = Input.Keys.NUM_3
 }
