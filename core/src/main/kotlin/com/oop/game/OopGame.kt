@@ -1,7 +1,7 @@
 package com.oop.game
 
 import com.badlogic.gdx.Game
-import com.oop.game.survival.SurvivalWorld
+import com.oop.game.example.ExampleWorld
 
 /**
  * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -34,13 +34,13 @@ class OopGame : Game() {
 
     // 화면(창) 크기 — DesktopLauncher 가 창 크기 설정에도 이 값을 읽어간다.
     //   public(기본)으로 둔 이유: 외부(DesktopLauncher)에서 접근해야 하므로.
-    val screenWidth = 1920
-    val screenHeight = 1080
+    val screenWidth = 480
+    val screenHeight = 640
 
     // 월드 크기 — 화면의 1.5배. 카메라(WASD)로 탐험 가능한 영역.
     //   이 값은 내부 설정이므로 private.
-    private val worldWidth = 2880
-    private val worldHeight = 1620
+    private val worldWidth = 720
+    private val worldHeight = 960
 
     /**
      * LibGDX 가 게임 시작 시 한 번 호출하는 라이프사이클 메서드.
@@ -56,12 +56,11 @@ class OopGame : Game() {
      *  GameWorld 가 LibGDX 의 Screen 인터페이스를 상속하므로 setScreen 인자로 넘길 수 있다.
      */
     override fun create() {
-        val firstWorld = SurvivalWorld(
+        val mainMenu = MainMenuScreen(
             screenWidth = screenWidth.toFloat(),
             screenHeight = screenHeight.toFloat(),
-            worldWidth = worldWidth.toFloat(),
-            worldHeight = worldHeight.toFloat()
+            game = this
         )
-        setScreen(firstWorld)   // 부모 Game 이 제공하는 메서드
+        setScreen(mainMenu)
     }
 }
